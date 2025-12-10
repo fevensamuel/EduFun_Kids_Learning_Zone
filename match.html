@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduFun Matching Game</title>
+  <link rel="stylesheet" href="styles/match.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎨 Fruit Matching Game!</h1>
+      <p>Drag the fruit to the correct word!</p>
+    </header>
+
+    <div class="game-area">
+      <!-- Left Column: Draggable fruits -->
+      <div class="column">
+        <div class="draggable" id="apple" draggable="true">🍎</div>
+        <div class="draggable" id="banana" draggable="true">🍌</div>
+        <div class="draggable" id="grapes" draggable="true">🍇</div>
+        <div class="draggable" id="strawberry" draggable="true">🍓</div>
+      </div>
+
+      <!-- Right Column: Drop zones with words -->
+      <div class="column">
+        <div class="dropzone" id="zone1">Banana</div>
+        <div class="dropzone" id="zone2">Apple</div>
+        <div class="dropzone" id="zone3">Strawberry</div>
+        <div class="dropzone" id="zone4">Grapes</div>
+      </div>
+    </div>
+
+    <div class="score-box">
+      Score: <span id="score">0</span>
+    </div>
+
+    <footer>
+      <a href="index.html" class="btn">⬅ Back to Home</a>
+    </footer>
+
+    <script src="js/match.js"></script>
+</body>
+</html>
