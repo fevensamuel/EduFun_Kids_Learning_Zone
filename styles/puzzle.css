@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to bottom right, #fffb7d, #ffb347);
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ff5722;
+  text-shadow: 2px 2px #ffd600;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+#score {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#muteBtn {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #03a9f4;
+  color: white;
+}
+
+.puzzle-card {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.puzzle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.piece {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: none; 
+  background-size: 200% 200%;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.piece.locked {
+  cursor: default;
+  border: 2px solid #4caf50;
+}
+
+.message {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff4081;
+}
+
+/* Navigation buttons container */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+/* Correct selector: buttons inside controls container */
+.controls .btn {
+    padding: 15px 35px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+/* Next button gradient (right) */
+#nextBtn {
+    background: linear-gradient(45deg, #ff4081, #f50057);
+}
+
+/* Previous button gradient (left) */
+#prevBtn {
+    background: linear-gradient(45deg, #03a9f4, #00bcd4);
+}
+
+/* Hover effects for both buttons */
+#nextBtn:hover, #prevBtn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+}
+
+/* Hover color change for fun */
+#nextBtn:hover {
+    background: linear-gradient(45deg, #ff80ab, #ff1744);
+}
+
+#prevBtn:hover {
+    background: linear-gradient(45deg, #81d4fa, #29b6f6);
+}
+
+/* Optional bounce animation */
+#nextBtn:hover, #prevBtn:hover {
+    animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+
+/* Footer button */
+footer .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2196f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+footer .btn:hover {
+    transform: scale(1.05) rotate(-2deg);
+    background-color: #42a5f5;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+}
+/* --- your existing CSS --- */
+/* use exactly what you provided */
+
+/* Congratulations overlay */
+
+.congrats {
+  background-color: #ffeb3b;
+  color: #ff5722;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.3);
+  font-size: 1.5rem;
+  animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+#backBtn {
+    padding: 15px 35px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#backBtn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+}
+
+#backBtn:active {
+    box-shadow: 0 0 20px #ffd600, 0 0 35px #ffeb3b;
+}
+
+@keyframes pop {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}

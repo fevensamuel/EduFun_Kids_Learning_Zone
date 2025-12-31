@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amharic Word Builder</title>
+<link rel="stylesheet" href="styles/amharic_build.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>✏️ Amharic Word Builder!</h1>
+    <button id="muteBtn">🔊 ድምፅ በርቷል</button>
+
+    <p>Type the correct word starting with the given letter</p>
+  </header>
+
+  <div class="game-area">
+
+    <div class="hohay-box">
+      <p>Starts with:</p>
+      <h2 id="hohay" class="clickable-hohay">ሀ</h2>
+    </div>
+
+    <div class="input-area">
+      <input 
+        type="text" 
+        id="userInput"
+        placeholder="Type the word here"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+      <button id="submitBtn" class="btn">✔ Submit</button>
+    </div>
+
+    <p class="feedback" id="feedback">Try to build a word!</p>
+
+    <div class="score-box">Score: <span id="score">0</span></div>
+
+    <div class="navigation">
+      <button id="prevBtn" class="btn prev-btn">⬅ Previous</button>
+      <button id="nextBtn" class="btn next-btn">Next ➡</button>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="index.html" class="btn"> Back to Home</a>
+  </footer>
+</div>
+
+<script src="js/amharic_build.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliding Puzzle Game</title>
+<link rel="stylesheet" href="styles/puzzle.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Puzzle Game</h1>
+    <div class="score-container">
+      <span id="score">⭐ Score: 0</span>
+      <button id="muteBtn">🔊 Sound ON</button>
+    </div>
+    <div class="puzzle-card">
+      <div id="full-image" class="full-image"></div>
+      <div id="puzzle" class="puzzle"></div>
+    </div>
+    <div id="message" class="message">👀 Look carefully!</div>
+    <div class="controls">
+      <button id="prevBtn"class="btn"> Previous</button>
+      <button id="nextBtn"class="btn">Next </button>
+    </div>
+  </div>
+
+  <!-- Correct sound -->
+  <audio id="correctSound" src="sounds/correct.mp3"></audio>
+
+  <footer>
+    <a href="index.html" class="btn"> Back to Home</a>
+  </footer>
+
+  <script src="js/puzzle.js"></script>
+</body>
+</html>

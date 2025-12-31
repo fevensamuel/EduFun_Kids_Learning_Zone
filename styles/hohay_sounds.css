@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom right, #fffb7d, #ffb347);
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ff5722;
+    text-shadow: 2px 2px #ffd600;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #4caf50;
+    margin-bottom: 30px;
+}
+
+/* Grid for letters */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Letter buttons */
+.letter-btn {
+    font-size: 2.5rem;
+    padding: 20px;
+    background-color: #03a9f4;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.letter-btn:hover {
+    transform: scale(1.2) rotate(-5deg);
+    background-color: #00bcd4;
+}
+
+footer .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #03a9f4;
+    color: white;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+footer .btn:hover {
+    background-color: #00bcd4;
+    transform: scale(1.05) rotate(-2deg);
+}
