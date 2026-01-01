@@ -2,8 +2,7 @@
 body {
     margin: 0;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(to bottom right, #fffb7d, #ffb347);
-    color: #333;
+    color: var(--text);
 }
 
 /* Container */

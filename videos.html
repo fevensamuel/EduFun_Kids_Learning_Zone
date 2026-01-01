@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Fun Learning</title>
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/videos.css">
 </head>
 <body>
+
+<nav class="top-nav">
+    <div class="logo"><a href="index.html">EduFun</a></div>
+    <div class="nav-links">
+        <a href="quiz.html">Quiz</a>
+        <a href="match.html">Match</a>
+        <a href="puzzle.html">Puzzles</a>
+        <a href="hohay_sounds.html">Hoheyates</a>
+        <a href="geez.html">Geez</a>
+        <a href="amharic_build.html">Amharic</a>
+        <a href="videos.html" class="active">Videos</a>
+    </div>
+</nav>
 
 <div class="container">
 
@@ -20,7 +34,7 @@
     </div>
 
     <!-- Tabs -->
-    <nav>
+    <nav class="video-tabs">
         <button class="tab-btn active" data-tab="learning">🎓 Learning</button>
         <button class="tab-btn" data-tab="stories">📖 Stories</button>
         <button class="tab-btn" data-tab="riddles">🧠 Riddles</button>
@@ -47,7 +61,7 @@
             <iframe src="https://www.youtube.com/embed/Fbs7lHi1JS4" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/CHGGdOe_ZEg" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/sx73VZK5YU0" allowfullscreen></iframe>
-             <iframe src="https://www.youtube.com/embed/yuI17A2mpl4" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/yuI17A2mpl4" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/g3zpDW7Rato" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/cnoJMTsFJqA" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/qE9p-whLtoc" allowfullscreen></iframe>
@@ -60,31 +74,35 @@
     <!-- Riddles -->
     <section id="riddles" class="tab-content">
 
-        <!-- Language buttons ONLY for riddles -->
         <div class="lang-switch">
             <button onclick="setLanguage('en')">English</button>
             <button onclick="setLanguage('am')">አማርኛ</button>
         </div>
 
         <div class="riddle-box">
-            
             <p id="riddleText"></p>
             <button onclick="showAnswer()">Show Answer</button>
             <p id="answerText" class="hidden"></p>
-
-           <div class="controls">
-      <button id="prevBtn">⬅️ Previous</button>
-      <button id="nextBtn">Next ➡️</button>
-    </div>
+            <div class="controls">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next </button>
+            </div>
         </div>
     </section>
 
-    <footer>
-        🌟 Learn and Shine Every Day 🌟
-        <a href="index.html" class="btn">⬅ Back to Home</a>
-    </footer>
-
+    <div class="footer-actions">
+        <a href="index.html" class="back-home-btn"> Back to Home</a>
+    </div>
 </div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-card">
+            <p>🌟 Learn and Shine Every Day 🌟</p>
+            <p>© 2024 EduFun Kids Learning Zone | Educational games for curious young learners</p>
+        </div>
+    </div>
+</footer>
 
 <script src="js/videos.js"></script>
 </body>

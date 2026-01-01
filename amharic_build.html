@@ -4,22 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amharic Word Builder</title>
+<link rel="stylesheet" href="styles/common.css">
 <link rel="stylesheet" href="styles/amharic_build.css">
 </head>
 <body>
+
+<nav class="top-nav">
+  <div class="logo"><a href="index.html">EduFun</a></div>
+  <div class="nav-links">
+    <a href="quiz.html">Quiz</a>
+   <a href="match.html">Match</a>
+    <a href="puzzle.html">Puzzles</a>
+    <a href="hohay_sounds.html">Hoheyates</a>
+    <a href="geez.html">Geez</a>
+    <a href="amharic_build.html" class="active">Amharic</a>
+    <a href="videos.html">Videos</a>
+  </div>
+</nav>
 
 <div class="container">
   <header>
     <h1>✏️ Amharic Word Builder!</h1>
     <button id="muteBtn">🔊 ድምፅ በርቷል</button>
-
-    <p>Type the correct word starting with the given letter</p>
+    <!-- brief instruction moved into the builder panel -->
   </header>
 
   <div class="game-area">
 
     <div class="hohay-box">
-      <p>Starts with:</p>
+      <p class="start-text">Starts with:</p>
       <h2 id="hohay" class="clickable-hohay">ሀ</h2>
     </div>
 
@@ -36,22 +49,29 @@
       <button id="submitBtn" class="btn">✔ Submit</button>
     </div>
 
-    <p class="feedback" id="feedback">Try to build a word!</p>
+    <p class="feedback" id="feedback"></p>
 
     <div class="score-box">Score: <span id="score">0</span></div>
 
     <div class="navigation">
-      <button id="prevBtn" class="btn prev-btn">⬅ Previous</button>
-      <button id="nextBtn" class="btn next-btn">Next ➡</button>
+      <button id="prevBtn" class="btn prev-btn"> Previous</button>
+      <button id="nextBtn" class="btn next-btn">Next </button>
     </div>
+
+      <div class="footer-actions">
+        <a href="index.html" class="back-home-btn"> Back to Home</a>
+      </div>
 
   </div>
 
-  <footer>
-    <a href="index.html" class="btn"> Back to Home</a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-card">
+        <p>© 2024 EduFun Kids Learning Zone | Educational games for curious young learners</p>
+      </div>
+    </div>
   </footer>
-</div>
 
-<script src="js/amharic_build.js"></script>
-</body>
-</html>
+  <script src="js/amharic_build.js"></script>
+  </body>
+  </html>

@@ -66,6 +66,8 @@ const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 const container = document.querySelector(".container");
 
+const footerActions = document.querySelector('.footer-actions');
+
 prevBtn.style.display = "none";
 
 // =========================
@@ -127,7 +129,8 @@ nextBtn.onclick = () => {
     prevBtn.style.display = "none";
     feedback.style.display = "none";
     scoreEl.parentElement.style.display = "none"; // hides Score
-    document.querySelector(".hohay-box p").style.display = "none"; // hides "Starts with:"
+    const labelEl = document.querySelector('.hohay-box .start-text');
+    if (labelEl) labelEl.style.display = 'none';
 
     // Show congratulations card inline
     const congrats = document.createElement("div");
@@ -142,9 +145,21 @@ nextBtn.onclick = () => {
       
     `;
 
-    // Insert card before footer
-    const footer = document.querySelector("footer");
-    container.insertBefore(congrats, footer);
+    // Insert card before the site footer if present, otherwise append inside the container.
+    const siteFooter = document.querySelector('.site-footer') || document.querySelector('footer');
+    if (siteFooter && siteFooter.parentNode) {
+      siteFooter.parentNode.insertBefore(congrats, siteFooter);
+    } else {
+      container.appendChild(congrats);
+    }
+
+    // Move the back-to-home actions below the congrats card
+    if (footerActions) {
+      congrats.parentNode.insertBefore(footerActions, congrats.nextSibling);
+      footerActions.style.display = 'flex';
+      footerActions.style.justifyContent = 'center';
+      footerActions.style.marginTop = '18px';
+    }
 
     // PLAY AGAIN button
     document.getElementById("playAgainBtn").addEventListener("click", () => {
@@ -154,6 +169,13 @@ nextBtn.onclick = () => {
 
       congrats.remove();
 
+      // move footer actions back into the game area
+      if (footerActions) {
+        container.appendChild(footerActions);
+        footerActions.style.display = '';
+        footerActions.style.marginTop = '';
+      }
+
       // Show quiz elements again
       hohayEl.style.display = "block";
       userInput.style.display = "block";
@@ -162,14 +184,19 @@ nextBtn.onclick = () => {
       prevBtn.style.display = currentIndex === 0 ? "none" : "inline-block";
       feedback.style.display = "block";
       scoreEl.parentElement.style.display = "block";
-      document.querySelector(".hohay-box p").style.display = "block";
+      const labelEl2 = document.querySelector('.hohay-box .start-text');
+      if (labelEl2) labelEl2.style.display = '';
 
       loadWord();
     });
 
-    // BACK TO HOME button
-    document.getElementById("backHomeBtn").addEventListener("click", () => {
-      window.location.href = "index.html";
-    });
+    // BACK TO HOME button (attach safely to the link)
+    const backHomeLink = document.querySelector('.back-home-btn');
+    if (backHomeLink) {
+      backHomeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'index.html';
+      });
+    }
   }
 };

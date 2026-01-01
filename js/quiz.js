@@ -190,8 +190,36 @@ nextBtn.onclick = () => {
             <p>Your final score is: ${score} ✅</p>
            <button id="playAgainBtn" class="btn">PLAY AGAIN</button>
         `;
-        container.insertBefore(congrats, document.querySelector("footer"));
-        
+        // Insert congrats before the site footer if present and a sibling,
+        // otherwise append inside the container.
+        // Hide everything in the container except the page title (h1)
+        Array.from(container.children).forEach(child => {
+            if (child.tagName.toLowerCase() === 'header') {
+                Array.from(child.children).forEach(hc => {
+                    if (hc.tagName.toLowerCase() !== 'h1') hc.style.display = 'none';
+                });
+            } else {
+                child.style.display = 'none';
+            }
+        });
+
+        // Insert congrats before the site footer if present and a sibling,
+        // otherwise append inside the container.
+        const siteFooter = document.querySelector('.site-footer') || document.querySelector('footer');
+        if (siteFooter && siteFooter.parentNode === container.parentNode) {
+            container.parentNode.insertBefore(congrats, siteFooter);
+        } else {
+            container.appendChild(congrats);
+        }
+
+        // Move the back-to-home button below the congrats card
+        const footerActions = document.querySelector('.footer-actions');
+        if (footerActions) {
+            if (congrats.nextSibling) congrats.parentNode.insertBefore(footerActions, congrats.nextSibling);
+            else congrats.parentNode.appendChild(footerActions);
+            footerActions.style.display = 'block';
+        }
+
         // Add event listener to the play again button
         const playAgainBtn = document.getElementById("playAgainBtn");
         playAgainBtn.addEventListener("click", resetGame);
